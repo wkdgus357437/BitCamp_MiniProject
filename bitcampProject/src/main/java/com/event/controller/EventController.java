@@ -33,6 +33,7 @@ public class EventController {
 		return eventService.getEventList(seqEvent); //글번호를 넘겨줘야한다
 	}
 	
+//	list
 	@RequestMapping(value="/getBestMenuList",method=RequestMethod.GET)
 	@ResponseBody
 	public List<MenuDTO> getBestMenuList() { //db데이터 //list말고 dto만
