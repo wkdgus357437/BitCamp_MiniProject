@@ -1,0 +1,76 @@
+@charset "UTF-8";
+
+/* css초기화 */
+body, div, dl,dt,dd,ul,ol,li, h1,h2,h3,h4,h5,h6, form, fieldset, p, button {
+	margin: 0;
+	padding: 0;
+}
+
+
+/* 헤드  */
+header{
+	width: auto;
+	margin: auto;
+	
+	align-items: stretch;
+	display: flex;
+	flex-wrap: wrap;
+	z-index: 1000;
+	position: fixed;
+	top: 0;
+	flex: 0 0 auto;
+	
+}
+
+#menuDetails_head{
+	background: #fcf5ef;
+	margin: auto;
+	width: 90%;
+}
+
+img, fieldset {
+	border: 0;
+}
+#goback_icon{
+	background: #fcf5ef;
+	width: 70px;
+	height: 70px;
+	cursor: pointer; 
+}
+
+#card{
+	position: relative;
+	display: flex;
+	flex-wrap: wrap;
+	align-items: stretch;
+	width: 100%;
+	margin: auto;
+}
+
+#menuName{
+	width: auto;
+	font-weight: bold;
+	font-size: 30px;
+}
+
+#menuContent{
+	width: auto;
+	font-size: 20px;
+}
+
+.size-option, .takeout-option, .shot-option{
+	width: auto;
+	font-weight: bold;
+	font-size: 25px;
+	color: #360a01;
+}
+
+input[type="text"] {
+	border-top: none;
+	border-left: none;
+	border-right: none;
+	border-bottom: none;
+	text-align: center;
+	color: #360a01;
+	font-size: 25px;
+}

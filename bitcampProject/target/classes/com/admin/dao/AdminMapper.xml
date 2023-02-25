@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="adminSQL"><!-- 다른 mapper.xml파일에서 중복된 id를 구별하기위해 넣는 구분자-->
+	
+	<insert id="menuWrite" parameterType="menu">
+		insert into menu (seqMenu, menuName, menuContent, menuPrice, categoryNum) values (seq_menu.NEXTVAL, #{menuName}, #{menuContent}, #{menuPrice}, #{categoryNum})
+	</insert>
+	
+	<select id="menuLoad" parameterType="String" resultType="menu">
+		select * from menu where categoryNum=#{categoryNum}
+	</select>
+
+	<delete id="menuEarase" parameterType="Integer">
+		delete menu where seqMenu=#{seqMenu}
+	</delete>
+	
+	<select id="menuUpdateForm" parameterType="Integer" resultType="menu">
+		select * from menu where seqMenu=#{seqMenu}
+	</select>
+	
+	<select id="orderAlert" resultType="order">
+		<![CDATA[select * from orderInform where orderCode = 2 and rownum<=1 and storenum = (select storenum from member where id =#{id})]]>
+	</select>
+	
+	<update id="menuUpdate" parameterType="menu">
+		update menu set menuName=#{menuName}, menuContent=#{menuContent}, menuPrice=#{menuPrice} where seqMenu=#{seqMenu}
+	</update>
+	
+	<select id="orderLoad" resultType="order">
+		select orderGroup, max(menuName) as menuName , sum(orderPrice) as orderPrice, max(orderCode) as orderCode 
+		from orderInform where (orderCode = 2 or orderCode = 3 or orderCode = 5) and storeNum = (select storeNum from member where id =#{id})
+		group by orderGroup order by orderGroup desc
+	</select>
+	
+	<update id="orderConfirm" parameterType="Integer">
+		update orderInform set orderCode=3 where orderGroup=#{orderGroup}
+	</update>
+	
+	<update id="orderComplete" parameterType="Integer">
+		update orderInform set orderCode=5 where orderGroup=#{orderGroup}
+	</update>
+	
+	<update id="orderReject" parameterType="Integer">
+		update orderInform set orderCode=4 where orderGroup=#{orderGroup}
+	</update>
+	
+	<select id="orderSales1" resultType="order" parameterType="String">
+		select to_char(orderDate, 'YYYY') as orderDate, to_char(sum(orderPrice)) as orderPrice, storeName 
+		from orderInform a left join store b on(a.storeNum = b.storeNum) where a.storeNum = (select storeNum from member where id =#{id})
+		group by to_char(orderDate, 'YYYY'), storeName order by storeName
+	</select><!-- 연도별 -->
+	
+	<select id="orderSales2" resultType="order" parameterType="String">
+		select to_char(orderDate, 'YY/mm') as orderDate, to_char(sum(orderPrice)) as orderPrice, storeName 
+		from orderInform a left join store b on(a.storeNum = b.storeNum) where a.storeNum = (select storeNum from member where id =#{id})
+		group by to_char(orderDate, 'YY/mm'), storeName
+	</select><!-- 월별 -->
+	
+	<select id="orderSales3" resultType="order" parameterType="String">
+		select orderGroup, to_char(max(orderDate)) as orderDate, to_char(sum(orderPrice)) as orderPrice, max(menuName) as menuName, max(storeName) as storeName 
+		from orderInform a left join store b on(a.storeNum = b.storeNum) where a.storeNum = (select storeNum from member where id =#{id})
+		group by orderGroup order by storeName, orderDate desc, orderGroup desc
+	</select><!-- 일별 -->
+	
+</mapper>

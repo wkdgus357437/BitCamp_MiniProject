@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="memberSQL"><!-- 다른 mapper.xml파일에서 중복된 id를 구별하기위해 넣는 구분자-->
+	<!-- UserDTO의 필드와 테이블의 컬럼명이 틀린 경우 -->
+	<resultMap type="com.member.bean.MemberDTO" id="memberResult">
+		<result property="name" column="NAME"/>
+		<result property="id" column="ID"/>
+		<result property="pwd" column="PWD"/>
+		<result property="email" column="EMAIL"/>
+		<result property="tel" column="TEl"/>
+	<!-- 필드와 컬럼명이 다른경우 강제로 맵핑을 시키는 방법-->
+	</resultMap>
+	<insert id="memberwrite" parameterType="member"><!-- parameter안에 풀 쿼리로 작성 -->
+		insert into member(seqMember, name, id, pwd, email, tel) values(seq_member.nextval, #{name}, #{id}, #{pwd}, #{email}, #{tel})
+	</insert>
+	
+	<select id="getMember" parameterType="member" resultType="member">
+		select * from member where id=#{id} and pwd = #{pwd}
+	</select>
+	
+	<select id="getMember2" parameterType="String" resultType="member">
+		select * from member where id=#{id}
+	</select>
+
+	 <select id="memberlogin" parameterType="member" resultType="member">
+	 	 select * from member where id=#{id}
+	 </select>
+	 
+	 <update id="memberUpdate" parameterType="member">
+		update member set name = #{name}, pwd = #{pwd} where id = #{id}
+	 </update>
+	 
+	<select id="getId" parameterType="String" resultType="String">
+		select id from member where email = #{email}
+	</select>
+	
+	<select id="getPwd" parameterType="String" resultType="String">
+		select pwd from member where email = #{email}
+	</select>
+	
+	<delete id="memberDelete" parameterType="String">
+		delete member where id=#{id}
+	</delete>
+	
+	<select id="checkPwd" parameterType="java.util.Map" resultType="member">
+		select * from member where id=#{ssId} and pwd=#{ssPwd}
+	</select>
+
+	<select id="update" parameterType="String" resultType="member">
+		select * from member where id=#{ssId}
+	</select>
+	<update id="updateGo" parameterType="member">
+		update member set
+					     name=#{name}
+					   , pwd=#{pwd}
+					   , email=#{email}
+					   , tel=#{tel}
+					   where id=#{id}
+	</update>
+	<!-- DTO를 가져와서 찾을 때 -->
+	
+	
+	
+	
+
+
+	
+	
+	
+	<!-- 테이블에 값 설정 -->
+	
+<!-- 	<select id="getUserList" resultMap="userResult">
+		select * from usertable
+	</select>
+	테이블의 값 전체 출력
+	
+
+	
+	
+	
+	<update id="changeMember" parameterType="user">
+		update usertable set name = #{name}, pwd = #{pwd} where id = #{id}
+	</update>
+	찾은 id에 해당하는 이름, 비밀번호 변경
+	
+	<update id="update" parameterType="java.util.Map">
+		update usertable set name = #{name}, pwd = #{pwd} where id = #{id}
+	</update>
+	Map으로 update
+	
+	<delete id="delete" parameterType="String">
+		delete usertable where id = #{id}
+	</delete>
+	
+	<select id="search" parameterType="java.util.Map" resultType="user">
+		select * from usertable
+		<choose>
+			<when test="name != null">where name like '%'||#{name}||'%'</when>
+			<when test="id != null">where id like '%'||#{id}||'%'</when>
+		</choose>
+		# or $
+	</select> -->
+	
+	
+</mapper>

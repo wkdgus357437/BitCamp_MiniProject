@@ -1,0 +1,421 @@
+@charset "UTF-8";
+/* css초기화 */
+body, div, dl,dt,dd,ul,ol,li, h1,h2,h3,h4,h5,h6, form, fieldset, p, button {
+	margin: 0;
+	padding: 0;
+}
+
+
+
+#select_option_div {
+	width: 100%;
+	margin: 0;
+	background-color: #fcf5ef;
+
+}
+
+#selectStore {
+	width: 80%;
+	margin: auto;
+	background-color: #fcf5ef;
+	color: grey;
+}
+#select_box_all {
+	width: 100%;
+	margin: 0;
+	text-align: center;
+	background-color: #fcf5ef;
+	font-size: 20pt;
+	font-weight: bold;
+}
+
+#select_box_start {
+	width: 90%;
+	margin: 0;
+	background-color: #fcf5ef;
+}
+
+#checkAll {
+	margin-top: 13px;
+	width: 25px;
+	height: 25px;
+}
+#checked_allMenu {
+	text-align: left;
+}
+#all_checked {
+	font-size: 17pt;
+	color: grey;
+}
+#check_other {
+	padding-top: 10px;
+	text-align: right;
+	font-size: 17pt;
+}
+#deleteAllBtn {
+	background-color: #fcf5ef;
+	border: 0;
+	outline: 0;
+	color: gray;
+}
+#deleteSomeBtn {
+	background-color: #fcf5ef;
+	border: 0;
+	outline: 0;
+}
+
+
+
+/* 메뉴 선택 헤드  */
+#header1 {
+	width: 100%;
+	margin: auto;
+	
+	align-items: stretch;
+	display: flex;
+	flex-wrap: wrap;
+	z-index: 1000;
+	position: fixed;
+	top: 0;
+	flex: 0 0 auto;
+}
+#storeList_head{
+	background: #fcf5ef;
+	margin: 0;
+	width: 100%;
+}
+
+.storeViewHead{
+	margin-top: 15px;
+}
+img, fieldset {
+	border: 0;
+}
+#goback_icon{
+	width: 70px;
+	height: 70px;
+	cursor: pointer; 
+}
+
+
+
+
+/* 메뉴 리스트부분 */ 
+#menuStart{
+	margin-top: 100px;
+	margin-bottom: 60px;
+}
+
+#scroll_list {
+	position: relative;
+	flex-wrap: wrap;
+	align-items: stretch;
+	width: 90%;
+	margin: auto;
+	margin-top: 10px;
+	margin-bottom: 30px;
+	display: flex;
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+}
+#scroll_list::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Opera*/
+}
+
+/* ajax */
+#cart-list {
+	width: 100%;
+	margin: 0;
+}
+#cart_index_one {
+	width: 100%;
+	margin: 0;
+}
+#cartList_head {
+	width: 100%;
+	margin: 0;
+}
+#delete_cart_one {
+
+	text-align: right;
+}
+#deleteListBtn {
+	width: 30px;
+	height: 30px;
+	background-color: #fcf5ef;
+	font-size: 15pt;
+}
+#checked_one_cart {
+	text-align: left;
+}
+#check_one_cart {
+	width: 25px;
+	height: 25px;
+}
+
+
+#menuName_div {
+	width: 100%;
+	margin: 0;
+	padding-left: 50px;
+	text-align: left;
+}
+
+
+
+#box_wrap{
+	width: auto;
+	height: auto;
+}
+#orderBtn_div{
+	width: auto;
+	margin: auto;
+	margin-bottom: 80px;
+}
+#orderListBtn {
+	width: 500px;
+	height: 60px;
+	margin: auto;
+	background-color: #360a01;
+	margin-bottom: 140px;
+}
+#row_option_price {
+	padding-left: 60px;
+	font-size: 14pt;
+}
+#takeoutOpt_col {
+	color: #a9a9a9;
+	padding: 0;
+}
+#sizeOpt_col {
+	color: #a9a9a9;	
+	padding: 0;
+}
+#shotOpt_col {
+	color: #a9a9a9;	
+	padding: 0;
+}
+#orderPrice_col {
+	font-weight: bold;
+	font-size: 17pt;
+	padding-right: 70px;
+	text-align: right;
+}
+
+/* *************************************************************** */
+
+
+
+
+/* 결제폼 css */
+#orderMenuForm {
+	max-width: 640px;
+	min-width: 320px;
+	height: 1200px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	background: #fcf5ef;
+	position: relative;
+	margin: 0 auto;
+	text-align: center;
+	border-top-left-radius: 20px;
+	border-top-right-radius: 20px;
+	font-family: 'Marcellus', sans-serif;
+	color: #360a01;
+	width: 100%;
+	margin: 0;
+}
+#orderMenuBtn {
+	background-image: url(/bitcafe/resources/img/kakaopay2.png);
+	width: 330px;
+	height: 66px;
+	border: solid 1px grey;
+	border-radius: 20px;
+}
+#order-list_start {
+	font-weight: bold;
+	font-size: 18pt;
+}
+#store-info {
+	width: 80%;
+	margin: 0;
+	text-align: left;
+	color: gray;
+	font-size: 15pt;
+}
+#totalPrice {
+	font-weight: bold;
+}
+#order-list {
+	width: 100%;
+	margin: 0;
+}
+
+#scroll_list_order {
+	position: relative;
+	flex-wrap: wrap;
+	align-items: stretch;
+	width: 90%;
+	height: auto;
+	margin: auto;
+	margin-top: 10px;
+	margin-bottom: 200px;
+	display: flex;
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+}
+#scroll_list_order::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Opera*/
+}
+#orderMenuForm_bottom {
+	position: fixed;
+	bottom: 80px;
+	left: 0;
+	right: 0;
+	z-index: 1000;
+	align-items: center;
+	background-color: #fcf5ef;
+	margin: 0 auto;
+	max-width: 640px;
+	min-width: 320px;
+	height: 120px;
+	font-family: 'Marcellus', sans-serif;
+	font-size: 2em;
+	color: #360a01;
+}
+#totalPrice_div {
+	font-size: 18pt;
+}
+
+
+
+
+
+/* *************************************************************** */
+
+
+li {
+	list-style: none;
+}
+input, select, button {
+	vertical-align: middle;
+}
+img {
+	vertical-align: top;
+}
+* {
+	box-sizing: border-box;
+}
+/* container(640px)을 제외한 좌우 흰 여백 */
+body {
+	overflow-y: scroll;
+	background: white;
+}
+/* 전체화면(container), 하단 탭(menu) 크기 및 옵션 */
+.container {
+	max-width: 640px;
+	min-width: 320px;
+	height: 1200px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	background: #fcf5ef;
+	position: relative;
+	margin: 0 auto;
+	text-align: center;
+	border-top-left-radius: 20px;
+	border-top-right-radius: 20px;
+	font-family: 'Marcellus', sans-serif;
+	font-size: 2em;
+	color: #360a01;
+}
+.info {
+	font-family: sans-serif;
+	font-size: 0.8em;
+	font-style: italic;
+	color: #000;
+	margin-bottom: 20px;
+}
+.menu {
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	z-index: 1000;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	background-color: rgba( 255, 255, 255, 0.2 );
+	margin: 0 auto;
+	max-width: 640px;
+	min-width: 320px;
+	height: 80px;
+	padding: 8px 20px;
+	border-bottom-left-radius: 20px;
+	border-bottom-right-radius: 20px;
+	-webkit-backdrop-filter: blur(20px);
+	backdrop-filter: blur(20px);
+}
+a.footer-item {
+	text-decoration: none;
+	font-family: sans-serif;
+	color: #000;
+	font-size: 0.7em;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+a.footer-item span {
+	display: inline-block;
+	width: 25px;
+	height: 25px;
+	margin-bottom: 5px;
+}
+a.footer-item span svg {
+	width: 100%;
+	max-height: 100%;
+}
+/* hover, 선택 시 효과 */
+a.footer-item.active, a.footer-item:hover {
+	color: #8b473c;
+}
+a.footer-item.active span svg path, a.footer-item:hover span svg path {
+	fill: #8b473c;
+}
+/* 아이콘 애니메이션 효과 */
+a.footer-item.active span svg, a.footer-item:hover span svg {
+	animation: vibrate 0.3s;
+}
+@keyframes vibrate {
+	0% {
+		transform: rotateZ(0deg);
+	}
+	30% {
+		transform: rotateZ(15deg);
+	}
+	60% {
+		transform: rotateZ(-15deg);
+	}
+}
+/* 하단 탭 반응형 */
+@media screen and (min-width: 640px) {
+	.menu {
+		width: 640px;
+		padding: 15px 40px;
+	}
+}
+
+@media screen and (min-width: 640px) {
+	a.footer-item {
+	font-size: 0.9em;
+	}
+}
+@media screen and (min-width: 640px) {
+	a.footer-item span {
+		width: 30px;
+		height: 30px;
+		margin-bottom: 10px;
+	}
+}

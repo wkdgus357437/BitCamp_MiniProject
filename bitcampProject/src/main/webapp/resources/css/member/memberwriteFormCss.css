@@ -1,0 +1,34 @@
+@charset "UTF-8";
+#nameDiv{
+ font-size: 10px;
+ color: red;
+}
+#idDiv{
+ font-size: 10px;
+ color: red;
+}
+#pwdDiv{
+ font-size: 10px;
+ color: red;
+}
+form{
+margin-top: 50%;
+}
+
+#name, #id, #pwd, #repwd, #email1, #email2, #email3, #tel1, #tel2, #tel3 { /* 회원가입 입력창 css */
+	background-color: #fcf5ef;
+    border-bottom-width:2px; 
+	border-top-width:0;
+  	border-left-width:0;
+	border-right-width:0;
+}
+
+#writeBtn, #RewriteBtn{ /* "Sign Up , Rewrite 버튼*/
+	background-color: #6b5656;
+    color: #fcf5ef;
+    border:none;
+    width: 50pt;
+    height: 20pt;
+    font-size: 0.4em;
+    border-radius: 10px;
+}

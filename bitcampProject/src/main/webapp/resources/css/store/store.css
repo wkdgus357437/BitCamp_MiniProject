@@ -1,0 +1,281 @@
+@charset "UTF-8";
+/* css초기화 */
+body, div, dl,dt,dd,ul,ol,li, h1,h2,h3,h4,h5,h6, form, fieldset, p, button {
+	margin: 0;
+	padding: 0;
+}
+
+
+/* 매장선택 헤드  */
+header{
+	width: auto;
+	margin: auto;
+	
+	align-items: stretch;
+	display: flex;
+	flex-wrap: wrap;
+	z-index: 1000;
+	position: fixed;
+	top: 0;
+	flex: 0 0 auto;
+	
+}
+
+#storeList_head{
+	background: #fcf5ef;
+	margin: auto;
+	width: 90%;
+}
+
+.storeViewHead{
+	margin-top: 15px;
+}
+img, fieldset {
+	border: 0;
+}
+#goback_icon{
+	background: #fcf5ef;
+	width: 70px;
+	height: 70px;
+	cursor: pointer; 
+}
+#search_DIV{
+	width: 80%;
+	margin: auto;
+	padding-top: 20px;
+	margin-bottom: 30px;
+	background: #fcf5ef;
+}
+
+#inputGroup-sizing-default, #button-addon2{
+	background-color: #fcf5ef;
+}
+
+
+/* 매장리스트부분 */ 
+
+#storeList_all{
+	width: 600px;
+}
+
+#store_List{
+	position: relative;
+	display: flex;
+	flex-wrap: wrap;
+	align-items: stretch;
+	width: 100%;
+	margin: auto;
+}
+#store_thumb{
+	width: 100px;
+	height: 100px;	
+}
+
+#store_info{
+	padding-top: 12px;
+	width: 350;
+	text-align: left;
+}
+
+#store_name{
+	width: auto;
+	font-weight: bold;
+	font-size: 22px;
+}
+#store_addr{
+	width: auto;
+	font-size: 17px;
+	color: grey;
+}
+#store_tel{
+	width: auto;
+	font-size: 18px;
+		
+}
+#phone_img{
+	margin-top: 6px;
+	margin-right: 5px;
+	margin-left: 3px;
+}
+#store_img_each{
+	display: flex;
+    justify-content: center;
+    padding-top: 12px;
+}
+
+#store_tel{
+	background-image: url("bitcafe/resources/img/phone1.jpg");
+	background-position: 20px 20px;
+	background-position: left;
+}
+
+#scroll_list {
+	position: relative;
+	flex-wrap: wrap;
+	align-items: stretch;
+	width: 85%;
+	margin: auto;
+	margin-top: 110px;
+	margin-bottom: 60px;
+	display: flex;
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+}
+#scroll_list::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Opera*/
+}
+
+
+
+#box_wrap{
+	width: auto;
+	height: auto;
+}
+#categoryStart{
+	width: 600px;
+}
+
+#col_phoneIcon {
+	padding: 0;
+}
+#row_tel {
+	width: auto;
+	margin-left: 3px;
+}
+#col_telNum {	
+	padding-top: 3px;
+	padding-left: 0;
+}
+
+
+
+
+
+
+/* *************************************************************** */
+
+li {
+	list-style: none;
+}
+input, select, button {
+	vertical-align: middle;
+}
+img {
+	vertical-align: top;
+}
+* {
+	box-sizing: border-box;
+}
+/* container(640px)을 제외한 좌우 흰 여백 */
+body {
+	overflow-y: scroll;
+	overflow-x: hidden;
+	background: white;
+}
+/* 전체화면(container), 하단 탭(menu) 크기 및 옵션 */
+.container {
+	max-width: 640px;
+	min-width: 320px;
+	height: 1200px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	background: #fcf5ef;
+	position: relative;
+	margin: 0 auto;
+	text-align: center;
+	border-top-left-radius: 20px;
+	border-top-right-radius: 20px;
+	font-family: 'Marcellus', sans-serif;
+	font-size: 2em;
+	color: #360a01;
+}
+.info {
+	font-family: sans-serif;
+	font-size: 0.8em;
+	font-style: italic;
+	color: #000;
+	margin-bottom: 20px;
+}
+.menu {
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	z-index: 1000;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	background-color: rgba( 255, 255, 255, 0.2 );
+	margin: 0 auto;
+	max-width: 640px;
+	min-width: 320px;
+	height: 80px;
+	padding: 8px 20px;
+	border-bottom-left-radius: 20px;
+	border-bottom-right-radius: 20px;
+	-webkit-backdrop-filter: blur(20px);
+	backdrop-filter: blur(20px);
+}
+a.footer-item {
+	text-decoration: none;
+	font-family: sans-serif;
+	color: #000;
+	font-size: 0.7em;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+a.footer-item span {
+	display: inline-block;
+	width: 25px;
+	height: 25px;
+	margin-bottom: 5px;
+}
+a.footer-item span svg {
+	width: 100%;
+	max-height: 100%;
+}
+/* hover, 선택 시 효과 */
+a.footer-item.active, a.footer-item:hover {
+	color: #8b473c;
+}
+a.footer-item.active span svg path, a.footer-item:hover span svg path {
+	fill: #8b473c;
+}
+/* 아이콘 애니메이션 효과 */
+a.footer-item.active span svg, a.footer-item:hover span svg {
+	animation: vibrate 0.3s;
+}
+@keyframes vibrate {
+	0% {
+		transform: rotateZ(0deg);
+	}
+	30% {
+		transform: rotateZ(15deg);
+	}
+	60% {
+		transform: rotateZ(-15deg);
+	}
+}
+/* 하단 탭 반응형 */
+@media screen and (min-width: 640px) {
+	.menu {
+		width: 640px;
+		padding: 15px 40px;
+	}
+}
+
+@media screen and (min-width: 640px) {
+	a.footer-item {
+	font-size: 0.9em;
+	}
+}
+@media screen and (min-width: 640px) {
+	a.footer-item span {
+		width: 30px;
+		height: 30px;
+		margin-bottom: 10px;
+	}
+}

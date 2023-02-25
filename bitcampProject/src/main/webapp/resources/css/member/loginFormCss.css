@@ -1,0 +1,55 @@
+@charset "UTF-8";
+
+* {
+	margin: 0;
+	padding: 0; /*다 달라붙게한다 디폴트값*/
+}
+
+form{
+margin-top: 50%;
+}
+
+#login-img-01{
+text-align : center;/* 로그인 Bit Cafe img */
+}
+#loginBtn, #writeFormBtn{ /* 로그인 , 회원가입 버튼*/
+	background-color: #6b5656;
+    color: #fcf5ef;
+    border:none;
+    width: 50pt;
+    height: 20pt;
+    font-size: 0.4em;
+    border-radius: 10px;
+}
+
+#loginSNSBtn{ /* sns 버튼*/
+background-color: #FEE500;
+    color: black;
+    border:none;
+    width: 110pt;
+    height: 20pt;
+    font-size: 0.4em;
+    border-radius: 10px;
+}
+
+#id, #pwd{ /* placeholder 크기조절 */
+	width: 130px;
+	height: 25px;
+	font-size: 12px;
+	background-color: #fcf5ef;
+}
+
+#id, #pwd{ /* placeholder 밑줄 */
+    border-bottom-width:2px; 
+	border-top-width:0;
+  	border-left-width:0;
+	border-right-width:0;
+}
+
+#memberIdSearchBtn, #memberPwdSearchBtn{
+	background-color: #fcf5ef;
+    border-bottom-width:2px; 
+	border-top-width:0;
+  	border-left-width:0;
+	border-right-width:0;
+}

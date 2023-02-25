@@ -1,0 +1,219 @@
+@charset "UTF-8";
+@import url('reset.css'); /* 따옴표 선택 */
+
+body, html{
+	background: white;
+	overflow: hidden;
+}
+#wrap{
+	width: 100%;
+	height: 100%;
+	margin: 0 auto;
+	overflow-x: hidden;
+	overflow-y: scroll;
+}
+#header{
+   width: 100%;
+   height: 60px;
+   background-color: #0866c6;
+   position: fixed;
+   z-index: 1000;
+}
+#header a {
+   font-size: 25px;
+   color: #fff;
+   width: 230px;
+   text-align: left;
+   padding: 13px 15px;
+   float: left;
+}
+
+#nav{
+   float: left;
+   width: 260px;
+   height: 100%;
+   background-color: #333333;
+   position: fixed;
+   top: 60px;
+   z-index: 500;
+}
+#nav li a{
+   padding: 16px 12px;
+   display: block;
+}
+.menu :hover, .menu :focus {
+	color: #ffffff;
+	text-decoration: none;
+	background-color: #0866c6;
+}
+li :hover {
+	cursor: pointer;
+}
+.menu-active{
+   background-color: #0866c6;
+}
+ul {
+   margin: 20px 0;
+   
+}
+#content #category{
+   font-size: 18px;
+}
+#menuContent{
+   font-size: 18px;
+}
+#content{
+	font-size: 18px;
+	left: 260px;
+	top: 100px;
+	position: relative;
+	width: 70%;
+	margin: auto;
+}
+#formContent{
+	font-size: 18px;
+    left: 20%;
+    top: 100px;
+    position: relative;
+    width: 70%;
+    margin: auto;
+}
+
+#salesContent{
+	font-size: 18px;
+	left: 280px;
+	top: 100px;
+	position: relative;
+	width: 70%;
+	margin: auto;
+}
+#orderContent{
+	font-size: 18px;
+	left: 280px;
+	top: 100px;
+	position: relative;
+	display: flex;
+	width: 70%;
+	justify-content: space-between;
+}
+#content a{
+   color: #000000;
+}
+#menuList{
+	position: relative;
+	/* right: 18%; */
+	width: 500px;
+}
+input#logout{
+}
+#admin{
+   width: 500px;
+   float: right;
+   top: 15px;
+   position: relative;
+}
+#welcome{
+   display: inline-block;
+   color: #ffffff;
+}
+#income li, #confirm li, #complete li {
+}
+#category {
+	position: fixed;
+	left: 270px;
+}
+#menu_thumb{
+	width: 150px;
+	height: 150px;
+}
+textarea{
+	height: 5em;
+	width: 20em;
+}
+#menuInsertForm{
+	width: 800px;
+	position: relative;
+	left: 50px;
+	top: 50px;
+}
+div#order {
+	width: 400px;
+}
+.orderRejectBtn, .orderConfirmBtn, .orderCompleteBtn {
+	float: right;
+}
+label {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+}
+div#orderList{
+	width: 70%;
+}
+div#head{
+	text-align: center;
+}
+li.order{
+	width: 50%;
+}
+/*[type="checkbox"]::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 1em;
+  height: 1em;
+  border-radius: 50%;
+  transform: scale(0.8);
+  background-color: gray;
+  transition: left 250ms linear;
+}
+[type="checkbox"] {
+  appearance: none;
+  position: relative;
+  border: max(2px, 0.1em) solid gray;
+  border-radius: 1.25em;
+  width: 2.25em;
+  height: 1.25em;
+}
+[type="checkbox"]:checked::before {
+  background-color: white;
+  left: 1em;
+}
+
+[type="checkbox"]:checked {
+  background-color: tomato;
+  border-color: tomato;
+}
+[type="checkbox"]:disabled {
+  border-color: lightgray;
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+[type="checkbox"]:disabled:before {
+  background-color: lightgray;
+}
+
+[type="checkbox"]:disabled + span {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+[type="checkbox"]:focus-visible {
+  outline-offset: max(2px, 0.1em);
+  outline: max(2px, 0.1em) solid tomato;
+}
+[type="checkbox"]:enabled:hover {
+  box-shadow: 0 0 0 max(4px, 0.2em) lightgray;
+}
+[type="checkbox"]::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 1em;
+  height: 1em;
+  border-radius: 50%;
+  transform: scale(0.8);
+  background-color: gray;
+  transition: left 250ms linear;
+} */

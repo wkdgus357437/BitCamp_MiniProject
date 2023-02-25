@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="menuSQL">
+	<select id="getMenu" parameterType="Integer" resultType="menu">
+		select * from menu where seqMenu=#{seqMenu}
+	</select>
+	
+	<!-- 카테고리 리스트 받기 -->	
+	<resultMap type="com.menu.bean.CategoryDTO" id="categoryResult">
+		<result property="categoryName" column="CATEGORYNAME" />
+		<result property="categoryNum" column="CATEGORYNUM" />
+		<result property="categoryImagePath" column="CATEGORYIMAGEPATH" />
+	</resultMap>
+
+	<select id="getCategoryList" resultMap="categoryResult">
+		select * from category
+	</select>
+	
+	<!-- 카테고리 선택 후 메뉴리스트(카테고리 번호와 일치하는 메뉴 가져오기) -->
+	<select id="getMenuList" parameterType="Integer" resultType="menu">
+		select * from menu where categoryNum=#{categoryNum}
+	</select>
+	
+	<!-- 바로 주문하기 -->
+	<insert id="orderMenu" parameterType="order">
+		insert into orderinform values(seq_order.NEXTVAL
+									 , #{id}
+									 , #{orderPrice}
+									 , #{qty}
+									 , sysdate
+									 , #{menuName}
+									 , 1
+									 , #{storeNum}
+									 , #{takeoutOpt}
+									 , #{shotOpt}
+									 , #{sizeOpt}
+									 , seq_order.NEXTVAL)
+	</insert>
+	
+	<select id="orderMenu2" resultType="int">
+		select seq_order.currval as orderGroup from dual
+	</select>
+	
+	<!-- 장바구니 담기 -->
+	<insert id="addCart" parameterType="order">
+		insert into orderinform values(seq_order.NEXTVAL
+									 , #{id}
+									 , #{orderPrice}
+									 , #{qty}
+									 , sysdate
+									 , #{menuName}
+									 , 0
+									 , #{storeNum}
+									 , #{takeoutOpt}
+									 , #{shotOpt}
+									 , #{sizeOpt}
+									 , seq_order.NEXTVAL)
+	</insert>
+</mapper>

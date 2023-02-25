@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+	<typeAliases>
+		<typeAlias type="com.menu.bean.MenuDTO" alias="menu"/>
+		<typeAlias type="com.menu.bean.CategoryDTO" alias="category"/>
+		<typeAlias type="com.store.bean.StoreDTO" alias="store"/>
+		<typeAlias type="com.order.bean.OrderDTO" alias="order"/>
+		<typeAlias type="com.member.bean.MemberDTO" alias="member" />
+	</typeAliases>
+</configuration>

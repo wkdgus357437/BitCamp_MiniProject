@@ -1,0 +1,69 @@
+@charset "UTF-8";
+h1{
+	text-align: center;
+	color: white;
+}
+td{
+	padding:2px;
+	font-size: 75%;
+	border-color:#873c00;
+	text-align:left;
+}
+th{
+	padding:2px;
+	font-size: 75%;
+	border-color:#873c00;
+	text-align:left;
+	padding-left: 4rem;
+}
+table{
+	font-size:30px;
+	position: absolute;
+   	top: 20%;
+   	width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    border-color:#873c00;
+	border-collapse: collapse;
+}
+.top-img{
+	background-image: url("/bitcafe/resources/img/maintop.jpg");
+	background-size: cover;
+	width: 100%;
+	height: 240px;
+	background-repeat: no-repeat;
+	border-top-left-radius: 10px;
+	border-top-right-radius: 10px;
+}
+.top-name{
+	font-family: 'Marcellus', sans-serif;
+	padding: 150px 100px;
+	color : white;
+	font-size: 0.7em;
+	text-align: right;
+}
+/* 전체화면(container), 하단 탭(menu) 크기 및 옵션 */
+.container {
+	max-width: 640px;
+	min-width: 320px;
+	height: 1200px;
+	display: flex;
+	flex-direction: column;
+	/*justify-content: center;*/
+	align-items: center;
+	background: #fcf5ef;
+	position: relative;
+	margin: 0 auto;
+	text-align: center;
+	border-top-left-radius: 20px;
+	border-top-right-radius: 20px;
+	font-family: 'Marcellus', sans-serif;
+	font-size: 2em;
+	color: #360a01;
+}
+.title{
+	position: absolute;
+   	top: 9%;
+   	left: 74%;
+   	transform: translate(-50%, -50%);
+}

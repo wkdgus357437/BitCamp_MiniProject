@@ -1,0 +1,32 @@
+@charset "UTF-8";
+* {
+	margin: 0;
+	padding: 0; /*다 달라붙게한다 디폴트값*/
+}
+
+form{
+margin-top: 50%;
+}
+
+#input_email,  #input_code { /* 아이디 찾기 입력창 css */
+	background-color: #fcf5ef;
+    border-bottom-width:2px; 
+	border-top-width:0;
+  	border-left-width:0;
+	border-right-width:0;
+}
+
+#input_IdDiv, #email_false, #input_email2Div {
+font-size: 10px;
+color: red;
+}
+
+#button-addon2, #button-addon3{ /* 이메일전송 확인 버튼*/
+	background-color: #6b5656;
+    color: #fcf5ef;
+    border:none;
+    width: 80pt;
+    height: 20pt;
+    font-size: 0.4em;
+    border-radius: 10px;
+}

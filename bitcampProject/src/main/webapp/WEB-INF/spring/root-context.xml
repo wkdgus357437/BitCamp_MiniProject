@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd">
+	
+	<!-- Root Context: defines shared resources visible to all other web components -->
+	<context:component-scan base-package="spring.conf"/>	
+	
+	<context:component-scan base-package="com.admin.dao" />
+	<context:component-scan base-package="com.admin.service" />
+	<context:component-scan base-package="com.menu.dao" />
+	<context:component-scan base-package="com.menu.service" />
+	<context:component-scan base-package="com.member.dao" />
+	<context:component-scan base-package="com.member.service" />
+	<context:component-scan base-package="com.order.dao" />
+	<context:component-scan base-package="com.order.service" />
+	<context:component-scan base-package="com.store.dao"/>			
+	<context:component-scan base-package="com.store.service"/>
+	<context:component-scan base-package="com.event.dao"/>
+	<context:component-scan base-package="com.event.service"/>
+	<context:component-scan base-package="com.other.dao" />
+	<context:component-scan base-package="com.other.service" />
+	
+	<!-- navermail설정 -->
+	<bean id="mailSender" class="org.springframework.mail.javamail.JavaMailSenderImpl">
+		<property name="host" value="smtp.naver.com" /> <!-- 메이서버 호스트 -->
+		<property name="port" value="587" /> <!-- 메이서버 포트번호 -->
+		<property name="username" value="zian0315@naver.com" /> <!-- 자신의 이메일 아이디 -->
+		<property name="password" value="bitcamp603" /> <!-- 자신의 비밀번호 -->
+		<!-- 보안연결 SSL과 관련된 설정 -->
+		<property name="javaMailProperties">
+			<props>
+				<prop key="mail.smtp.auth">true</prop>
+				<prop key="mail.smtp.starttls.enable">true</prop>
+				<prop key="mail.smtps.checkserveridentity">true</prop>
+				<prop key="mail.smtps.ssl.trust">*</prop>
+				<prop key="mail.debug">true</prop>
+				<prop key="mail.smtp.socketFactory.class">javax.net.ssl.SSLSocketFactory</prop>
+				<prop key="mail.smtp.ssl.protocols">TLSv1.2</prop>
+			</props>
+		</property>
+	</bean>
+	
+</beans>

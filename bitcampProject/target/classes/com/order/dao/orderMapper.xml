@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="orderSQL">
+	<select id="getOrderMenu" parameterType="Integer" resultType="order">
+		select * from orderInform join store using(storeNum) where orderGroup=#{orderGroup} and orderCode=1
+	</select>
+	
+	<select id="getCartList" parameterType="String" resultType="order">
+		select * from orderInform where id=#{id} and orderCode=0
+	</select>
+	
+	<select id="getUserStore" parameterType="String" resultType="order">
+		select distinct storeNum, storeName from orderInform join store using(storeNum) where id=#{id} and orderCode=0
+	</select>
+	
+	<select id="getSelectCartList" parameterType="java.util.Map" resultType="order">
+		select * from orderInform where id=#{id} and storeNum=#{storeNum} and orderCode=0
+	</select>
+	
+	<update id="orderList" parameterType="java.util.Map">
+		<foreach collection="checkedArr" item="seqOrder" separator=";" open="DECLARE BEGIN" close="; END;">
+			update orderInform set orderGroup=#{orderGroup}, orderCode=1
+			where id=#{id} and storeNum=#{storeNum} and 
+			seqOrder=#{seqOrder}
+		</foreach>
+	</update>
+	
+	<delete id="deleteSingleOrder" parameterType="Integer">
+		delete from orderInform where seqOrder=#{seqOrder}
+	</delete>
+	
+	<delete id="deleteSomeOrder" parameterType="java.util.Map">
+		<foreach collection="checkedArr" item="seqOrder" separator=";" open="DECLARE BEGIN" close="; END;">
+			delete from orderInform where seqOrder=#{seqOrder}
+		</foreach>
+	</delete>
+	
+	<update id="paymentComplete" parameterType="Integer">
+		update orderInform set orderCode=2
+		where orderGroup=#{orderGroup} 
+	</update>
+</mapper>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+ "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="storeSQL">
+
+	<resultMap type="com.store.bean.StoreDTO" id="storeResult">
+		<result property="storeName" column="STORENAME" />
+		<result property="storeAddr" column="STOREADDR" />
+		<result property="storeImagePath" column="STOREIMAGEPATH" />
+		<result property="storeTel" column="STORETEL" />
+		<result property="storeNum" column="STORENUM" />
+	</resultMap>
+
+	<select id="getStoreList" parameterType="java.lang.String" resultMap="storeResult">
+		select * from store <if test="keyword != null">where storeName like '%'||#{keyword}||'%'</if>
+	</select>
+
+
+</mapper>
