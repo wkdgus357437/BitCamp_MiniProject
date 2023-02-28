@@ -16,12 +16,14 @@ public class EventDAOMyBatis implements EventDAO {
 	@Autowired
 	private SqlSession sqlSession;
 	
+	// 이벤트 리스트	
 	@Override
 	public EventDTO getEventList(int seqEvent) {
 		
 		return sqlSession.selectOne("eventSQL.getEventList",seqEvent);
 	}
-
+	
+	// 이벤트 베스트 메뉴 리스트
 	@Override
 	public List<MenuDTO> getBestMenuList() {
 		return sqlSession.selectList("eventSQL.getBestMenuList");
