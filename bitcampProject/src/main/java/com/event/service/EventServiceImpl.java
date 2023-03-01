@@ -14,12 +14,15 @@ public class EventServiceImpl implements EventService {
 	@Autowired
 	private EventDAO eventDAO;
 	
+	
+	// 이벤트 리스트	
 	@Override
 	public EventDTO getEventList(int seqEvent) {
 	
 		return eventDAO.getEventList(seqEvent);
 	}
 
+	// 베스트 메뉴 리스트	
 	@Override
 	public List<MenuDTO> getBestMenuList() {
 		
