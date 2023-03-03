@@ -28,7 +28,7 @@ border-bottom-left-radius: 20px;
 </head>
 
 <body>
-	<!-- container start -->
+	<!-- container -->
 	<div class="container">
 	<input type="hidden" id="seqEvent_hidden" value="${param.seqEvent }">
 		<table id="eventListTable" cellpadding="5" frame="void"
