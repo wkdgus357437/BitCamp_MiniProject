@@ -28,6 +28,7 @@ border-bottom-left-radius: 20px;
 </head>
 
 <body>
+<!--  test-->
 	<!-- container -->
 	<div class="container">
 	<input type="hidden" id="seqEvent_hidden" value="${param.seqEvent }">
